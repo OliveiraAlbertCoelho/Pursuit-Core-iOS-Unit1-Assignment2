@@ -71,6 +71,7 @@ func verifyLetter (_ letter: String, randomWord: String, partialResult: [String]
             result[index] = String(partialResult[i])
         }
     }
+   
     return result
 }
 let stickManArray = ["", head,lArm,body,rArm,lLeg ,rLeg];
@@ -87,11 +88,13 @@ func game() {
         let newResult = verifyLetter(userInput, randomWord: word, partialResult: result)
         if newResult == result { strikes += 1 }
         result = newResult
+        
         if result.joined() == word {
             print("You win! The word was \"\(word)\".")
             break
-        } else {
+        } else  {
             print("\(result.joined()),  You got \(maxStrikes - strikes) tries \n \(stickManArray[strikes])")
+          if maxStrikes == 6{ print("You lost! The word was \"\(word)\"")}
         }
     }
 }
