@@ -94,7 +94,10 @@ func game() {
             break
         } else  {
             print("\(result.joined()),  You got \(maxStrikes - strikes) tries \n \(stickManArray[strikes])")
-          if maxStrikes == 6{ print("You lost! The word was \"\(word)\"")}
+          if strikes == 6{
+            print("You lost! The word was \"\(word)\"")
+            
+            }
         }
     }
 }
